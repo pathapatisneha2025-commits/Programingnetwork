@@ -48,7 +48,6 @@ const BusinessServices = () => {
 
   return (
     <div style={styles.container}>
-      {/* Header Section Updated to match Screenshot */}
       <div style={styles.headerSection}>
         <p style={styles.subHeader}>WHAT WE OFFER</p>
         <h1 style={styles.mainTitle}>
@@ -88,10 +87,12 @@ const styles = {
     maxWidth: '1200px',
     margin: '0 auto',
   },
+
   headerSection: {
     textAlign: 'center',
     marginBottom: '64px',
   },
+
   subHeader: {
     fontSize: '14px',
     fontWeight: '700',
@@ -100,6 +101,7 @@ const styles = {
     marginBottom: '16px',
     textTransform: 'uppercase',
   },
+
   mainTitle: {
     fontSize: '48px',
     fontWeight: '800',
@@ -107,13 +109,14 @@ const styles = {
     marginBottom: '24px',
     lineHeight: '1.2',
   },
+
   highlightText: {
-    // Multi-color gradient for the word "essential" as seen in screenshot
     backgroundImage: 'linear-gradient(to right, #059669, #3b82f6, #f59e0b)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     display: 'inline-block',
   },
+
   description: {
     fontSize: '18px',
     color: '#6b7280',
@@ -121,26 +124,32 @@ const styles = {
     margin: '0 auto',
     lineHeight: '1.6',
   },
+
+  /* ✅ RESPONSIVE GRID */
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)', 
+    gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '32px',
   },
+
   card: {
     borderRadius: '24px',
     overflow: 'hidden',
     backgroundColor: '#fff',
     border: '1px solid #f3f4f6',
   },
+
   imageWrapper: {
     position: 'relative',
     height: '240px',
   },
+
   image: {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
   },
+
   iconBadge: {
     position: 'absolute',
     top: '16px',
@@ -149,31 +158,56 @@ const styles = {
     padding: '10px',
     borderRadius: '12px',
     fontSize: '20px',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
   },
+
   cardBody: {
     padding: '24px',
   },
+
   cardTitle: {
     fontSize: '20px',
     fontWeight: '700',
     color: '#111827',
     marginBottom: '10px',
   },
+
   cardText: {
     fontSize: '14px',
     color: '#6b7280',
     marginBottom: '20px',
     lineHeight: '1.5',
-    minHeight: '42px',
   },
+
   viewDetails: {
     textDecoration: 'none',
     color: '#059669',
     fontWeight: '700',
     fontSize: '14px',
-    display: 'inline-flex',
-    alignItems: 'center',
+  },
+
+  /* ================= RESPONSIVE ================= */
+  '@media (max-width: 1024px)': {
+    grid: {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+    },
+    mainTitle: {
+      fontSize: '36px',
+    },
+  },
+
+  '@media (max-width: 768px)': {
+    container: {
+      padding: '50px 16px',
+    },
+    grid: {
+      gridTemplateColumns: '1fr',
+    },
+    mainTitle: {
+      fontSize: '28px',
+    },
+    description: {
+      fontSize: '16px',
+    },
   }
 };
 
