@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const BusinessServices = () => {
   const services = [
@@ -46,7 +46,17 @@ const BusinessServices = () => {
     }
   ];
 
-  const isMobile = window.innerWidth <= 768;
+  // ✅ reactive screen tracking
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div style={{
@@ -94,7 +104,7 @@ const BusinessServices = () => {
         </p>
       </div>
 
-      {/* GRID → MOBILE FIX HERE */}
+      {/* GRID FIX */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
