@@ -106,23 +106,31 @@ spotlight: {
       padding: 0 10px;
     }
 
-    /* SERVICES LAYOUT */
+    /* SERVICES LAYOUT -> FORCE VERTICAL */
     .spotlight {
       flex-direction: column !important;
       text-align: center;
       align-items: center !important;
     }
 
-    /* ✅ FIXED IMAGE (IMPORTANT UPGRADE) */
+    /* ✅ GLOBAL IMAGE FIX (IMPORTANT FOR SOLAR / DAIRY / SALON) */
     .spotlight img {
       width: 100% !important;
       height: 240px !important;
-      object-fit: cover;
+      max-height: 240px !important;
 
-      /* 🔥 KEY FIX: better focus for solar / dairy / salon images */
-      object-position: center center;
+      /* KEY FIX */
+      object-fit: cover !important;
+      object-position: center top !important;
 
       border-radius: 18px !important;
+      display: block;
+    }
+
+    /* EXTRA FIX for better vertical framing on tall subjects */
+    .spotlight:nth-child(odd) img,
+    .spotlight:nth-child(even) img {
+      object-position: center center !important;
     }
 
     /* TEXT */
