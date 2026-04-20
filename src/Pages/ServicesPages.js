@@ -86,26 +86,68 @@ spotlight: {
 
   return (
      <>
-    <style>{`
-        @media (max-width: 768px) {
-          .spotlight {
-            flex-direction: column !important;
-            text-align: center;
-          }
+   <style>{`
+  @media (max-width: 768px) {
 
-          .spotlight img {
-            height: 250px !important;
-          }
+    /* HERO */
+    .hero h1 {
+      font-size: 28px !important;
+      padding: 0 10px;
+    }
 
-          .spotlight-text {
-            align-items: center !important;
-          }
+    .hero p {
+      font-size: 14px !important;
+      padding: 0 10px;
+    }
 
-          .pill-container {
-            gap: 8px;
-          }
-        }
-      `}</style>
+    /* PILL BUTTONS */
+    .pill-container {
+      gap: 8px !important;
+      padding: 0 10px;
+    }
+
+    /* ✅ MAIN FIX: SERVICES VERTICAL ON MOBILE */
+    .spotlight {
+      flex-direction: column !important;
+      text-align: center;
+      align-items: center !important;
+    }
+
+    /* IMAGE FULL WIDTH MOBILE */
+    .spotlight img {
+      width: 100% !important;
+      height: 240px !important;
+      object-fit: cover;
+      border-radius: 18px !important;
+    }
+
+    /* TEXT CENTER ALIGN */
+    .spotlight-text {
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    /* TITLE SMALLER */
+    .spotlight-text h2 {
+      font-size: 24px !important;
+    }
+
+    /* TAGLINE */
+    .spotlight-text p {
+      font-size: 15px !important;
+    }
+
+    /* BUTTON CENTER */
+    .spotlight button {
+      align-self: center !important;
+    }
+
+    /* GRID STACK */
+    .grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+`}</style>
 
     <div style={styles.container}>
       {/* HERO & QUICK NAVIGATION */}
