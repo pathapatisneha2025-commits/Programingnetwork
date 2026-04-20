@@ -86,7 +86,7 @@ spotlight: {
 
   return (
      <>
-  <style>{`
+<style>{`
   @media (max-width: 768px) {
 
     /* HERO */
@@ -113,12 +113,15 @@ spotlight: {
       align-items: center !important;
     }
 
-    /* ✅ FIXED IMAGE MOBILE QUALITY (IMPORTANT) */
+    /* ✅ FIXED IMAGE (IMPORTANT UPGRADE) */
     .spotlight img {
       width: 100% !important;
-      height: auto !important;
-      max-height: 260px !important;
+      height: 240px !important;
       object-fit: cover;
+
+      /* 🔥 KEY FIX: better focus for solar / dairy / salon images */
+      object-position: center center;
+
       border-radius: 18px !important;
     }
 
