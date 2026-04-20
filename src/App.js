@@ -9,17 +9,21 @@ import Footer from "./components/Footer";
 import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/contactUs";
 import ServicesPage from "./Pages/ServicesPages";
+import ScrollToTop from "./components/ScrollToTop";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 // COMPONENT IMPORTS
 
 
 export default function App() {
+
   return (
     <Router>
       {/* COMMON NAVBAR */}
       <Navbar/>
-
+<ScrollToTop/>
     <Routes>
            <Route
              path="/"

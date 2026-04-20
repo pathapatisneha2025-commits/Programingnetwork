@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react'; // Using lucide-react for the icons
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer style={styles.footerContainer}>
@@ -24,16 +24,29 @@ const Footer = () => {
         </div>
 
         {/* Middle Column: Quick Links */}
-        <div style={styles.linkColumn}>
-          <h4 style={styles.columnTitle}>QUICK LINKS</h4>
-          <ul style={styles.list}>
-            <li style={styles.listItem}>Home</li>
-            <li style={styles.listItem}>About Us</li>
-            <li style={styles.listItem}>Services</li>
-            <li style={styles.listItem}>Contact</li>
-          </ul>
-        </div>
+    {/* Middle Column: Quick Links */}
+<div style={styles.linkColumn}>
+  <h4 style={styles.columnTitle}>QUICK LINKS</h4>
+  <ul style={styles.list}>
+    
+    <li style={styles.listItem}>
+      <Link to="/" style={styles.link}>Home</Link>
+    </li>
 
+    <li style={styles.listItem}>
+      <Link to="/about" style={styles.link}>About Us</Link>
+    </li>
+
+    <li style={styles.listItem}>
+      <Link to="/services" style={styles.link}>Services</Link>
+    </li>
+
+    <li style={styles.listItem}>
+      <Link to="/contact" style={styles.link}>Contact</Link>
+    </li>
+
+  </ul>
+</div>
         {/* Right Column: Contact */}
         <div style={styles.contactColumn}>
           <h4 style={styles.columnTitle}>CONTACT</h4>
@@ -99,6 +112,10 @@ const styles = {
     height: '100%',
     objectFit: 'cover',
   },
+  link: {
+  textDecoration: 'none',
+  color: '#4b5563',
+},
   brandTitle: {
     fontSize: '20px',
     fontWeight: '700',
