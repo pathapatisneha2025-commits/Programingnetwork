@@ -155,6 +155,24 @@ spotlight: {
     .grid {
       grid-template-columns: 1fr !important;
     }
+
+    @media (max-width: 768px) {
+
+  .spotlight img {
+    width: 100% !important;
+
+    /* 🔥 KEY FIX: make image container vertical */
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;   /* vertical frame */
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    border-radius: 18px !important;
+    display: block;
+  }
+
+}
   }
 `}</style>
 
