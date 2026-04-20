@@ -86,7 +86,7 @@ spotlight: {
 
   return (
      <>
-   <style>{`
+  <style>{`
   @media (max-width: 768px) {
 
     /* HERO */
@@ -106,38 +106,36 @@ spotlight: {
       padding: 0 10px;
     }
 
-    /* ✅ MAIN FIX: SERVICES VERTICAL ON MOBILE */
+    /* SERVICES LAYOUT */
     .spotlight {
       flex-direction: column !important;
       text-align: center;
       align-items: center !important;
     }
 
-    /* IMAGE FULL WIDTH MOBILE */
+    /* ✅ FIXED IMAGE MOBILE QUALITY (IMPORTANT) */
     .spotlight img {
       width: 100% !important;
-      height: 240px !important;
+      height: auto !important;
+      max-height: 260px !important;
       object-fit: cover;
       border-radius: 18px !important;
     }
 
-    /* TEXT CENTER ALIGN */
+    /* TEXT */
     .spotlight-text {
       align-items: center !important;
       text-align: center !important;
     }
 
-    /* TITLE SMALLER */
     .spotlight-text h2 {
       font-size: 24px !important;
     }
 
-    /* TAGLINE */
     .spotlight-text p {
       font-size: 15px !important;
     }
 
-    /* BUTTON CENTER */
     .spotlight button {
       align-self: center !important;
     }
