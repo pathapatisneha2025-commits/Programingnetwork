@@ -46,169 +46,120 @@ const BusinessServices = () => {
     }
   ];
 
+  const isMobile = window.innerWidth <= 768;
+
   return (
-    <div style={styles.container}>
-      <div style={styles.headerSection}>
-        <p style={styles.subHeader}>WHAT WE OFFER</p>
-        <h1 style={styles.mainTitle}>
-          Business setups across <span style={styles.highlightText}>essential</span> sectors
+    <div style={{
+      fontFamily: "'Inter', sans-serif",
+      padding: isMobile ? '40px 16px' : '80px 24px',
+      backgroundColor: '#ffffff',
+      maxWidth: '1200px',
+      margin: '0 auto',
+    }}>
+      
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <p style={{
+          fontSize: '14px',
+          fontWeight: '700',
+          color: '#059669',
+          letterSpacing: '0.2em',
+          marginBottom: '16px',
+          textTransform: 'uppercase',
+        }}>
+          WHAT WE OFFER
+        </p>
+
+        <h1 style={{
+          fontSize: isMobile ? '28px' : '48px',
+          fontWeight: '800',
+          color: '#1f2937',
+          marginBottom: '24px',
+          lineHeight: '1.2',
+        }}>
+          Business setups across <span style={{
+            backgroundImage: 'linear-gradient(to right, #059669, #3b82f6, #f59e0b)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}>essential</span> sectors
         </h1>
-        <p style={styles.description}>
+
+        <p style={{
+          fontSize: isMobile ? '16px' : '18px',
+          color: '#6b7280',
+          maxWidth: '750px',
+          margin: '0 auto',
+        }}>
           Each service comes with end-to-end guidance — from planning to launch — so you can focus on running your business.
         </p>
       </div>
 
-      <div style={styles.grid}>
+      {/* GRID → MOBILE FIX HERE */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+        gap: '32px',
+      }}>
         {services.map((service, index) => (
-          <div key={index} style={styles.card}>
-            <div style={styles.imageWrapper}>
-              <img src={service.image} alt={service.title} style={styles.image} />
-              <div style={styles.iconBadge}>{service.icon}</div>
+          <div key={index} style={{
+            borderRadius: '24px',
+            overflow: 'hidden',
+            backgroundColor: '#fff',
+            border: '1px solid #f3f4f6',
+          }}>
+            
+            <div style={{ position: 'relative', height: '240px' }}>
+              <img src={service.image} alt={service.title} style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }} />
+              <div style={{
+                position: 'absolute',
+                top: '16px',
+                left: '16px',
+                backgroundColor: 'rgba(255,255,255,0.9)',
+                padding: '10px',
+                borderRadius: '12px',
+                fontSize: '20px',
+              }}>
+                {service.icon}
+              </div>
             </div>
-            <div style={styles.cardBody}>
-              <h3 style={styles.cardTitle}>{service.title}</h3>
-              <p style={styles.cardText}>{service.description}</p>
-              <a href="#" style={styles.viewDetails}>
-                View details <span style={{ marginLeft: '4px' }}>→</span>
+
+            <div style={{ padding: '24px' }}>
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: '700',
+                color: '#111827',
+                marginBottom: '10px',
+              }}>
+                {service.title}
+              </h3>
+
+              <p style={{
+                fontSize: '14px',
+                color: '#6b7280',
+                marginBottom: '20px',
+              }}>
+                {service.description}
+              </p>
+
+              <a href="#" style={{
+                textDecoration: 'none',
+                color: '#059669',
+                fontWeight: '700',
+                fontSize: '14px',
+              }}>
+                View details →
               </a>
             </div>
+
           </div>
         ))}
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    fontFamily: "'Inter', sans-serif",
-    padding: '80px 24px',
-    backgroundColor: '#ffffff',
-    maxWidth: '1200px',
-    margin: '0 auto',
-  },
-
-  headerSection: {
-    textAlign: 'center',
-    marginBottom: '64px',
-  },
-
-  subHeader: {
-    fontSize: '14px',
-    fontWeight: '700',
-    color: '#059669',
-    letterSpacing: '0.2em',
-    marginBottom: '16px',
-    textTransform: 'uppercase',
-  },
-
-  mainTitle: {
-    fontSize: '48px',
-    fontWeight: '800',
-    color: '#1f2937',
-    marginBottom: '24px',
-    lineHeight: '1.2',
-  },
-
-  highlightText: {
-    backgroundImage: 'linear-gradient(to right, #059669, #3b82f6, #f59e0b)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    display: 'inline-block',
-  },
-
-  description: {
-    fontSize: '18px',
-    color: '#6b7280',
-    maxWidth: '750px',
-    margin: '0 auto',
-    lineHeight: '1.6',
-  },
-
-  /* ✅ RESPONSIVE GRID */
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '32px',
-  },
-
-  card: {
-    borderRadius: '24px',
-    overflow: 'hidden',
-    backgroundColor: '#fff',
-    border: '1px solid #f3f4f6',
-  },
-
-  imageWrapper: {
-    position: 'relative',
-    height: '240px',
-  },
-
-  image: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-  },
-
-  iconBadge: {
-    position: 'absolute',
-    top: '16px',
-    left: '16px',
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    padding: '10px',
-    borderRadius: '12px',
-    fontSize: '20px',
-  },
-
-  cardBody: {
-    padding: '24px',
-  },
-
-  cardTitle: {
-    fontSize: '20px',
-    fontWeight: '700',
-    color: '#111827',
-    marginBottom: '10px',
-  },
-
-  cardText: {
-    fontSize: '14px',
-    color: '#6b7280',
-    marginBottom: '20px',
-    lineHeight: '1.5',
-  },
-
-  viewDetails: {
-    textDecoration: 'none',
-    color: '#059669',
-    fontWeight: '700',
-    fontSize: '14px',
-  },
-
-  /* ================= RESPONSIVE ================= */
-  '@media (max-width: 1024px)': {
-    grid: {
-      gridTemplateColumns: 'repeat(2, 1fr)',
-    },
-    mainTitle: {
-      fontSize: '36px',
-    },
-  },
-
-  '@media (max-width: 768px)': {
-    container: {
-      padding: '50px 16px',
-    },
-    grid: {
-      gridTemplateColumns: '1fr',
-    },
-    mainTitle: {
-      fontSize: '28px',
-    },
-    description: {
-      fontSize: '16px',
-    },
-  }
 };
 
 export default BusinessServices;
