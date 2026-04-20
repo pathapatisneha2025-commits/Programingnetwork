@@ -147,7 +147,66 @@ const HeroSection = () => {
       boxShadow: '0 10px 15px rgba(34, 197, 94, 0.3)',
       cursor: 'pointer',
       zIndex: 1000,
-    }
+    },
+    /* ================= MOBILE RESPONSIVE ONLY ================= */
+'@media (max-width: 768px)': {
+  heroContainer: {
+    padding: '40px 5%',
+  },
+
+  layout: {
+    gridTemplateColumns: '1fr',
+    gap: '30px',
+  },
+
+  heading: {
+    fontSize: '38px',
+    letterSpacing: '-1px',
+  },
+
+  description: {
+    fontSize: '16px',
+    marginBottom: '25px',
+  },
+
+  btnRow: {
+    flexDirection: 'column',
+    gap: '12px',
+    marginBottom: '40px',
+  },
+
+  exploreBtn: {
+    width: '100%',
+    justifyContent: 'center',
+  },
+
+  talkBtn: {
+    width: '100%',
+  },
+
+  statsGrid: {
+    gap: '25px',
+    flexWrap: 'wrap',
+  },
+
+  imageWrapper: {
+    marginTop: '20px',
+  },
+
+  floatingCard: {
+    bottom: '-15px',
+    left: '10px',
+    padding: '12px 16px',
+    borderRadius: '16px',
+  },
+
+  whatsapp: {
+    width: '50px',
+    height: '50px',
+    bottom: '20px',
+    right: '20px',
+  }
+}
   };
 
   return (
