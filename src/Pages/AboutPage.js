@@ -5,42 +5,47 @@ const AboutPage = () => {
   return (
     <>
       {/* ✅ MOBILE RESPONSIVE CSS ONLY */}
-      <style>{`
-        @media (max-width: 768px) {
+   <style>{`
+  @media (max-width: 768px) {
 
-          .heroTitle {
-            font-size: 28px !important;
-            padding: 0 10px;
-          }
+    .heroTitle {
+      font-size: 28px !important;
+      padding: 0 10px;
+    }
 
-          .heroSubtext {
-            font-size: 14px !important;
-            padding: 0 10px;
-          }
+    .heroSubtext {
+      font-size: 14px !important;
+      padding: 0 10px;
+    }
 
-          .splitSection {
-            flex-direction: column !important;
-            padding: 50px 16px !important;
-            text-align: center;
-          }
+    .splitSection {
+      flex-direction: column !important;
+      padding: 50px 16px !important;
+      text-align: center;
+    }
 
-          .roundedImage {
-            height: 240px !important;
-          }
+    .roundedImage {
+      height: 240px !important;
+    }
 
-          .sectionTitle {
-            font-size: 24px !important;
-          }
+    .sectionTitle {
+      font-size: 24px !important;
+    }
 
-          .valuesTitle {
-            font-size: 28px !important;
-          }
+    .valuesTitle {
+      font-size: 28px !important;
+    }
 
-          .card {
-            padding: 30px 16px !important;
-          }
-        }
-      `}</style>
+    .card {
+      padding: 30px 16px !important;
+    }
+
+    /* ✅ ONLY THIS ADDED: VISION SECTION REVERSE FIX */
+    .splitSection:nth-of-type(3) {
+      flex-direction: column-reverse !important;
+    }
+  }
+`}</style>
 
       <div style={styles.pageWrapper}>
 
